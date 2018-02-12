@@ -1,13 +1,14 @@
 {
   "name": "df-braingames",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Project on Hexlet courses",
   "main": "dist/index.js",
   "scripts": {
     "babel-node": "babel-node",
     "start": "npm run babel-node -- src/bin/brain-games.js",
     "build": "babel src --out-dir dist --source-maps inline",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "eslint": "eslint"
   },
   "author": "DexterFreeman",
   "license": "ISC",
@@ -17,8 +18,12 @@
   "devDependencies": {
     "babel-cli": "*",
     "babel-core": "*",
+    "babel-eslint": "^8.2.1",
     "babel-preset-env": "*",
-    "babel-preset-stage-0": "*"
+    "babel-preset-stage-0": "*",
+    "eslint": "^4.17.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0"
   },
   "bin": {
     "brain-games": "dist/bin/brain-games.js"

@@ -1,5 +1,10 @@
 # Hello!
 
+<a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
+<a href="https://codeclimate.com/github/codeclimate/codeclimate/test_coverage"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage" /></a>
+https://travis-ci.org/Dexter-Freeman/project-lvl1-s224.svg?branch=master
+
+
 Этот проект выполняет Dexter Freeman в рамках прохождения проекта "Brain Games" на Hexlet.
 
 Задачи:
@@ -30,3 +35,19 @@
 			1. Подключил библиотеку readline-sync в файле package.json : "dependencies": {readline-sync": "*"}
 			2. В index.js описал логику, экспортировал функцию, в brain-games.js импортировал эту функцию и вызвал после приветсвия. Все работает. Запуск через комманду npm start.
 			3. С публикацией пока не получается, смогу только завтра опубликовать
+
+Шаг 3
+	Качество кода
+		Задачи:
+			1. Установил eslint, eslint-config-airbnb-base, eslint-plugin-import, babel-eslint в devDependencies
+			2. В scripts добавил: "eslint": "eslint"
+			3. .eslintrc.yml скопировал из репозитория-образца (мало что понял)
+			4. Добавил комманду make lint, запускающую npm run eslint
+			5. Не удалось подключить eslint к SublimeText3 - почему-то не работает
+
+			Travis-ci
+				1. Зарегистрировался
+				2. Подключил репозиторий
+				3. В .travis.yml сделал так: script:
+                                               - npm run eslint
+                4. С бейджем не уверен, надо проверить

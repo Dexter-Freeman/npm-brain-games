@@ -6,3 +6,6 @@ start:
 
 publish: 
 	npm run build
+
+make lint:
+	npm run eslint
