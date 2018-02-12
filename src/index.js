@@ -1,5 +1,5 @@
 // @flow
-import readlineSync from 'readline-sync';   // Импортируем readline-sync
+import readlineSync from 'readline-sync'; // Импортируем readline-sync
 // var readlineSync = require('readline-sync');
 
 const greeting = () => {
