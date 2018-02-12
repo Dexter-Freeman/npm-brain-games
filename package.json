@@ -2,7 +2,7 @@
   "name": "df-braingames",
   "version": "1.0.0",
   "description": "Project on Hexlet courses",
-  "main": "brain-games.js",
+  "main": "dist/index.js",
   "scripts": {
     "babel-node": "babel-node",
     "start": "npm run babel-node -- src/bin/brain-games.js",
@@ -11,6 +11,9 @@
   },
   "author": "DexterFreeman",
   "license": "ISC",
+  "dependencies": {
+    "readline-sync": "*"
+  },
   "devDependencies": {
     "babel-cli": "*",
     "babel-core": "*",
