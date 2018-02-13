@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
-import { greeting } from '../index'; // Импортируем функцию greeting из index.js
+import { welcome, askName, hello } from '../index'; // Импортируем функцию greeting из index.js
 
-console.log('Welcome to the Brain Games!'); // Приветствие
-greeting(); // Делаем вызов функции greeting
+welcome();
+const name = askName();
+hello(name);

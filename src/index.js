@@ -1,47 +1,33 @@
 
 import readlineSync from 'readline-sync'; // Импортируем readline-sync
 
-const greeting = () => {
-  const name = readlineSync.question('May I have your name?'); // Спрашиваем имя
-  return console.log(`Hello ${name}, nice to meet you!`); // Возвращаем сообщение
+const askName = () => readlineSync.question('May I have your name?'); // Спрашиваем имя
+
+const hello = name => console.log(`Hello ${name}, nice to meet you!`); // Возвращаем сообщение
+
+const welcome = () => console.log('Welcome to the Brain Games!'); // Head
+
+const greeting = (rules) => {
+  welcome();
+  console.log(rules); // Rules explain
+  console.log(' '); // Empty string for devide
+};
+
+const correct = () => console.log('Correct!');
+
+const unCorrect = (w, r, name) => {
+  console.log(`'${w}' is wrong answer ;(. Correct answer was '${r}'`);
+  console.log(`Let's try again, ${name}!`);
 };
 
 const question = str => console.log(`Question: ${str}`);
 
-const even = () => {
-  console.log('Welcome to the Brain Games!'); // Приветствие
-  console.log('Answer "yes" if number even otherwise answer "no".'); // Rules
-  const name = readlineSync.question('May I have your name?'); // Спрашиваем имя
-  console.log(`Hello ${name}, nice to meet you!`); // Возвращаем сообщение
+const answer = () => readlineSync.question('Your answer: ');
 
-  const correct = () => console.log('Correct!');
+const random = () => Math.floor(Math.random() * 1000);
 
-  const unCorrect = (w, r) => {
-    console.log(`'${w}' is wrong answer ;(. Correct answer was '${r}'`);
-    console.log(`Let's try again, ${name}!`);
-  };
+const congratulations = name => console.log(`Congratulations, ${name}`);
 
-  for (let i = 1; i < 4; i += 1) {
-    console.log(`${question(i)} `);
-    const answer = readlineSync.question('Your answer: ');
-    if (i % 2 === 0) {
-      if (answer === 'yes') {
-        correct();
-      } else {
-        unCorrect(answer, 'yes');
-        return;
-      }
-    } else {
-      if (answer === 'no') {
-        correct();
-      } else {
-        unCorrect(answer, 'no');
-        return;
-      }
-    }
-  }
-
-  console.log(`Congratulations, ${name}`);
-};
-
-export { greeting, even };
+export { welcome, greeting, askName, hello,
+  correct, answer, unCorrect, question, random,
+  congratulations };
