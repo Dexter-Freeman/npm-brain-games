@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 import { greeting } from '../index'; // Импортируем функцию greeting из index.js
 
 console.log('Welcome to the Brain Games!'); // Приветствие

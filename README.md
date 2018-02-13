@@ -40,14 +40,16 @@
 	Качество кода
 		Задачи:
 			1. Установил eslint, eslint-config-airbnb-base, eslint-plugin-import, babel-eslint в devDependencies
-			2. В scripts добавил: "eslint": "eslint"
+			2. В scripts добавил: "eslint": "eslint src/**/*.js"
 			3. .eslintrc.yml скопировал из репозитория-образца (мало что понял)
 			4. Добавил комманду make lint, запускающую npm run eslint
-			5. Не удалось подключить eslint к SublimeText3 - почему-то не работает
+			5. Подключил eslint к Sublime
 
 			Travis-ci
 				1. Зарегистрировался
 				2. Подключил репозиторий
 				3. В .travis.yml сделал так: script:
                                                - npm run eslint
-                4. С бейджем не уверен, надо проверить
+                4. Бейджи работают
+
+                В файле src/index.js в последней строке оставил export { greeting }; не смотря на то что линтер хотел дефолтный экспорт, но с экспортом по дефолту перестает работать пакет
