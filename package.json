@@ -8,9 +8,14 @@
     "start": "npm run babel-node -- src/bin/brain-games.js",
     "build": "babel src --out-dir dist --source-maps inline",
     "prepublishOnly": "npm run build",
-    "eslint": "eslint src/**/*.js"
+    "eslint": "eslint src/**/*.js",
+    "even" : "npm run babel-node -- src/bin/brain-even.js"
   },
   "author": "DexterFreeman",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dexter-Freeman/project-lvl1-s224.git"
+  },
   "license": "ISC",
   "dependencies": {
     "readline-sync": "*"
@@ -26,7 +31,8 @@
     "eslint-plugin-import": "^2.8.0"
   },
   "bin": {
-    "brain-games": "dist/bin/brain-games.js"
+    "brain-games": "dist/bin/brain-games.js",
+    "brain-even": "dist/bin/brain-even.js"
   },
   "files": [
     "dist"
