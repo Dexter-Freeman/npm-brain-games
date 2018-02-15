@@ -3,7 +3,10 @@ import readlineSync from 'readline-sync'; // Импортируем readline-syn
 
 const askName = () => readlineSync.question('May I have your name?'); // Ask user name
 
-const hello = name => console.log(`Hello ${name}, nice to meet you!`); // Say hello
+const hello = (name) => {
+  console.log(`Hello ${name}, nice to meet you!`); // Say hello
+  console.log(' '); // Empty string for devide
+};
 
 const welcome = () => console.log('Welcome to the Brain Games!'); // Head
 
@@ -13,21 +16,21 @@ const greeting = (rules) => { // Show greeting message
   console.log(' '); // Empty string for devide
 };
 
-const correct = () => console.log('Correct!'); // If answer correct
+const correct = () => console.log('Correct!'); // If user answer correct
 
-const unCorrect = (w, r, name) => { // If answer is uncorrect
+const unCorrect = (w, r, userName) => { // If answer is uncorrect
   console.log(`'${w}' is wrong answer ;(. Correct answer was '${r}'`);
-  console.log(`Let's try again, ${name}!`);
+  console.log(`Let's try again, ${userName}!`);
   return;
 };
 
 const question = str => console.log(`Question: ${str}`); // Say question
 
-const answer = () => readlineSync.question('Your answer: '); // Ask answer
+const answer = () => readlineSync.question('Your answer: '); // Ask user answer
 
 const random = () => Math.floor(Math.random() * 1000); // Random number from 0 to 1000
 
-const congratulations = name => console.log(`Congratulations, ${name}`); // Final congratulations message
+const congratulations = userName => console.log(`Congratulations, ${userName}`); // Final congratulations message
 
 export { welcome, greeting, askName, hello,
   correct, answer, unCorrect, question, random,
