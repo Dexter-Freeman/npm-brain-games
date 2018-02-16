@@ -1,5 +1,6 @@
 
-import readlineSync from 'readline-sync'; // Импортируем readline-sync
+import readlineSync from 'readline-sync'; // Importing readline-sync
+import { car, cdr } from 'hexlet-pairs'; // Importing hexlet-pairs
 
 const askName = () => readlineSync.question('May I have your name?'); // Ask user name
 
@@ -36,6 +37,31 @@ const random = (num) => {
 
 const congratulations = userName => console.log(`Congratulations, ${userName}`); // Final congratulations message
 
+const gameIteration = (userName, func, iter) => {
+  if (iter === 0) { // Terminal condition
+    congratulations(userName); // // Final congratulations message
+  } else {
+    const questionAnswer = func(); // Generate a question-answer pair
+    question(car(questionAnswer)); // Say question
+    const userAnswer = answer(); // Ask user answer
+    if (userAnswer === `${cdr(questionAnswer)}`) { // If user answer is correct
+      correct(); // Show message "Correct!"
+      const iterNew = iter - 1; // Reduce the counter
+      gameIteration(userName, func, iterNew); // Recursive call
+    } else {
+      unCorrect(userAnswer, cdr(questionAnswer), userName); // If answer is uncorrect
+    }
+  }
+};
+
+const game = (rules, func) => {
+  const iter = 3; // Count of game iteration
+  greeting(rules); // Show greeting message
+  const userName = askName();
+  hello(userName); // Say hello
+  gameIteration(userName, func, iter); // Ask user name
+};
+
 export { welcome, greeting, askName, hello,
   correct, answer, unCorrect, question, random,
-  congratulations };
+  congratulations, gameIteration, game };

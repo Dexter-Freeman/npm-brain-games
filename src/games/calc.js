@@ -1,7 +1,6 @@
 
-import { cons, car, cdr } from 'hexlet-pairs'; // Importing hexlet-pairs
-import { random } from '../index';
-import { game } from '../games/gamesprocess/games-process';
+import { cons, car, cdr } from 'hexlet-pairs';
+import { random, game } from '../index';
 
 export default function calc() {
   const rules = 'What is the result of the expression?'; // Rules

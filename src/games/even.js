@@ -1,7 +1,6 @@
 
-import { cons, car } from 'hexlet-pairs'; // Importing hexlet-pairs
-import { random } from '../index';
-import { game } from '../games/gamesprocess/games-process';
+import { cons, car } from 'hexlet-pairs';
+import { random, game } from '../index';
 
 export default function even() {
   const rules = 'Answer "yes" if number even otherwise answer "no".'; // Rules

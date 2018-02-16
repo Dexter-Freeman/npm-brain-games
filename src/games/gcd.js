@@ -1,18 +1,16 @@
 
-import { cons, car, cdr } from 'hexlet-pairs'; // Импортируем hexlet-pairs
-import { random } from '../index';
-import { game } from '../games/gamesprocess/games-process';
+import { cons, car, cdr } from 'hexlet-pairs';
+import { random, game } from '../index';
 
-export default function gcd() {
+export default function gcdGame() {
   const rules = 'Find the greatest common divisor of given numbers.'; // Rules
-  const iter = 3; // Count of game iteration
   const generateQuastionAndAnswer = () => { // Return pair question-answer
-  // Тут описываем функцию, которая генерирует пару вопрос-ответ и возвращает ее в виде пары
+  // Here we describe a function that generates a question-answer pair and returns it as a pair
     const pair = cons(random(100), random(100)); // Variable for storing numbers used in the game
     const question = `${car(pair)} ${cdr(pair)}`; // Initialize veriable for question
     const num1 = car(pair); // First number
     const num2 = cdr(pair); // Second number
-    const nod = (a, b) => { // NOD function - The classical Euclidean algorithm
+    const gcd = (a, b) => { // GCD function - The classical Euclidean algorithm
       if (a === 0) {
         return b;
       } else if (a === 1 || a === b) {
@@ -26,8 +24,8 @@ export default function gcd() {
         }
       } return a;
     };
-    const answer = nod(num1, num2); // Initialize veriable for answer
+    const answer = gcd(num1, num2); // Initialize veriable for answer
     return cons(question, answer); // Return pair question-answer
   };
-  game(rules, generateQuastionAndAnswer, iter); // Run game
+  game(rules, generateQuastionAndAnswer); // Run game
 }
