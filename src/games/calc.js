@@ -1,17 +1,14 @@
 
-import { cons, car, cdr, toString } from 'hexlet-pairs'; // Импортируем hexlet-pairs
+import { cons, car, cdr } from 'hexlet-pairs'; // Importing hexlet-pairs
 import { random } from '../index';
 import { game } from '../games/gamesprocess/games-process';
 
-const calc = () => {
-  const rules = 'What is the result of the expression?'; // // Rules
-  const iter = 3; // Count of game iteration
-
+export default function calc() {
+  const rules = 'What is the result of the expression?'; // Rules
   const generateQuastionAndAnswer = () => { // Return pair question-answer
-  // Тут описываем функцию, которая генерирует пару вопрос-ответ и возвращает ее в виде пары
-    const pair = cons(random(), random()); // Переменная для хранения чисел, используемых в игре
-    console.log(`pair - ${toString(pair)}`);
-    const chooseOperand = random(); // Условие для выбора операнда
+  // Here we describe a function that generates a question-answer pair and returns it as a pair
+    const pair = cons(random(100), random(100)); // Variable for storing numbers used in the game
+    const chooseOperand = random(); // The condition for selecting an operand
     let question; // Initialize veriable for question
     let answer; // Initialize veriable for answer
     // Then select the operand
@@ -27,8 +24,5 @@ const calc = () => {
     }
     return cons(question, answer); // Return pair question-answer
   };
-  // generateQuastionAndAnswer();
-  game(rules, generateQuastionAndAnswer, iter); // Run game
-};
-
-export { calc };
+  game(rules, generateQuastionAndAnswer); // Run game
+}

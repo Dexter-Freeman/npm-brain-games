@@ -21,14 +21,18 @@ const correct = () => console.log('Correct!'); // If user answer correct
 const unCorrect = (w, r, userName) => { // If answer is uncorrect
   console.log(`'${w}' is wrong answer ;(. Correct answer was '${r}'`);
   console.log(`Let's try again, ${userName}!`);
-  return;
 };
 
 const question = str => console.log(`Question: ${str}`); // Say question
 
 const answer = () => readlineSync.question('Your answer: '); // Ask user answer
 
-const random = () => Math.floor(Math.random() * 1000); // Random number from 0 to 1000
+const random = (num) => {
+  if (num === undefined) {
+    num = 1000;
+  }
+  return Math.floor(Math.random() * num); // Random number from 0 to 1000
+};
 
 const congratulations = userName => console.log(`Congratulations, ${userName}`); // Final congratulations message
 

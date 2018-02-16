@@ -11,15 +11,16 @@ const gameIteration = (userName, func, iter) => {
     const userAnswer = answer(); // Ask user answer
     if (userAnswer === `${cdr(questionAnswer)}`) { // If user answer is correct
       correct(); // Show message "Correct!"
-      iter -= 1; // Reduce the counter
-      gameIteration(userName, func, iter); // Recursive call
+      const iterNew = iter - 1; // Reduce the counter
+      gameIteration(userName, func, iterNew); // Recursive call
     } else {
       unCorrect(userAnswer, cdr(questionAnswer), userName); // If answer is uncorrect
     }
   }
 };
 
-const game = (rules, func, iter) => {
+const game = (rules, func) => {
+  const iter = 3; // Count of game iteration
   greeting(rules); // Show greeting message
   const userName = askName();
   hello(userName); // Say hello

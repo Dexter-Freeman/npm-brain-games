@@ -1,32 +1,21 @@
 
-import { greeting, askName, answer, hello, correct, unCorrect, question, random, congratulations } from '../index';
+import { cons, car } from 'hexlet-pairs'; // Importing hexlet-pairs
+import { random } from '../index';
+import { game } from '../games/gamesprocess/games-process';
 
-const even = () => {
-  const rules = 'Answer "yes" if number even otherwise answer "no".';
-  greeting(rules);
-  const name = askName();
-  hello(name);
-
-  for (let i = 1; i < 4; i += 1) {
-    const num = random();
-    question(num);
-    const userAnswer = answer();
-    if (num % 2 === 0) {
-      if (userAnswer === 'yes') {
-        correct();
-      } else {
-        unCorrect(userAnswer, 'yes', name);
-        return;
-      }
-    } else if (userAnswer === 'no') {
-      correct();
+export default function even() {
+  const rules = 'Answer "yes" if number even otherwise answer "no".'; // Rules
+  const generateQuastionAndAnswer = () => { // Return pair question-answer
+  // Here we describe a function that generates a question-answer pair and returns it as a pair
+    const pair = cons(random(), random()); // Variable for storing numbers used in the game
+    const question = car(pair); // Initialize const for question
+    let answer; // Initialize veriable for answer
+    if (question % 2 === 0) {
+      answer = 'yes';
     } else {
-      unCorrect(userAnswer, 'no', name);
-      return;
+      answer = 'no';
     }
-  }
-  
-  congratulations(name);
-};
-
-export { even };
+    return cons(question, answer); // Return pair question-answer
+  };
+  game(rules, generateQuastionAndAnswer); // Run game
+}
