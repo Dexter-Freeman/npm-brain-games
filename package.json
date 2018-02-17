@@ -11,7 +11,8 @@
     "eslint": "eslint src/**/*.js --fix",
     "even": "npm run babel-node -- src/bin/brain-even.js",
     "calc": "npm run babel-node -- src/bin/brain-calc.js",
-    "gcd": "npm run babel-node -- src/bin/brain-gcd.js"
+    "gcd": "npm run babel-node -- src/bin/brain-gcd.js",
+    "balance": "npm run babel-node -- src/bin/brain-balance.js"
   },
   "author": "DexterFreeman",
   "repository": {
@@ -37,7 +38,8 @@
     "brain-games": "dist/bin/brain-games.js",
     "brain-even": "dist/bin/brain-even.js",
     "brain-calc": "dist/bin/brain-calc.js",
-    "brain-gcd": "dist/bin/brain-gcd.js"
+    "brain-gcd": "dist/bin/brain-gcd.js",
+    "brain-balance": "dist/bin/brain-balance.js"
   },
   "files": [
     "dist"
