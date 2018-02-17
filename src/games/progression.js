@@ -22,8 +22,10 @@ export default function progression() {
       arr.splice(bone, 1, '..'); // Replace the array element with index bone
       return arr.join(' '); // Return the question string
     };
+    const answerString = answer(progressionGenerator(car(pair), cdr(pair)));
+    const questionString = question(progressionGenerator(car(pair), cdr(pair)));
     // Return pair question-answer
-    return cons(question(progressionGenerator(car(pair), cdr(pair))), answer(progressionGenerator(car(pair), cdr(pair))));
+    return cons(questionString, answerString);
   };
   game(rules, generateQuastionAndAnswer); // Run game
 }
