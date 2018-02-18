@@ -7,7 +7,9 @@ export default function progression() {
   const generateQuastionAndAnswer = () => { // Return pair question-answer
   // Here we describe a function that generates a question-answer pair and
   // returns it as a pair
-    const pair = cons(random(20), random(10)); // Variable for storing numbers
+    const base = random(20);// Variable for storing numbers
+    // used in the game
+    const step = random(10); // Variable for storing numbers
     // used in the game
     const progressionGenerator = (base, step) => { // Function to generate progression
       const arr = []; // Create an empty array
@@ -22,8 +24,8 @@ export default function progression() {
       arr.splice(bone, 1, '..'); // Replace the array element with index bone
       return arr.join(' '); // Return the question string
     };
-    const answerString = answer(progressionGenerator(car(pair), cdr(pair)));
-    const questionString = question(progressionGenerator(car(pair), cdr(pair)));
+    const answerString = answer(progressionGenerator(base, step));
+    const questionString = question(progressionGenerator(base, step));
     // Return pair question-answer
     return cons(questionString, answerString);
   };

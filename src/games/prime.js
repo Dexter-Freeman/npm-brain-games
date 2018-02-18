@@ -7,7 +7,7 @@ export default function prime() {
   const generateQuastionAndAnswer = () => { // Return pair question-answer
   // Here we describe a function that generates a question-answer pair and
   // returns it as a pair
-    const isPrime = (number) => {
+    const isPrime = (number) => { // A function that checks for a prime number
       if (number < 2) {
         return false;
       }
@@ -18,13 +18,13 @@ export default function prime() {
       }
       return true;
     };
-    const question = random(1000);
-    const answer = (quest) => {
+    const question = random(1000); // Initialize veriable for question
+    const answer = (quest) => { // Function that return answer
       if (isPrime(quest)) {
-        return 'yes';
-      } return 'no';
+        return 'yes'; // If number is prime
+      } return 'no'; // If number is not prime
     };
-    return cons(question, answer(question));
+    return cons(question, answer(question)); // Return pair question-answer
   };
   game(rules, generateQuastionAndAnswer); // Run game
 }
