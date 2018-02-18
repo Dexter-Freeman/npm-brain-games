@@ -1,5 +1,5 @@
 
-import { cons, car, cdr } from 'hexlet-pairs';
+import { cons } from 'hexlet-pairs';
 import { random, game } from '../index';
 
 export default function progression() {
@@ -11,11 +11,13 @@ export default function progression() {
     // used in the game
     const step = random(10); // Variable for storing numbers
     // used in the game
-    const progressionGenerator = (base, step) => { // Function to generate progression
+    const progressionGenerator = (baseProgression, stepProgression) => {
+      // Function to generate progression
       const arr = []; // Create an empty array
-      arr.unshift(base); // The first element do base
-      for (let i = 0; i < 8; i++) {
-        arr.push(arr[i] + step); // Generate the following sequence element by adding a step
+      arr.unshift(baseProgression); // The first element do base
+      for (let i = 0; i < 8; i += 1) {
+        arr.push(arr[i] + stepProgression); // Generate the following sequence element
+        //  by adding a step
       } return arr; // Return the resulting sequence as an array
     };
     const bone = random(9); // the element number of the array

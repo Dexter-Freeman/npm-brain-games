@@ -16,13 +16,15 @@ export default function gcdGame() {
       } else if (a === 1 || a === b) {
         return a;
       }
-      while (a !== b) {
-        if (a > b) {
-          a -= b;
+      let a2 = a;
+      let b2 = b;
+      while (a2 !== b2) {
+        if (a2 > b2) {
+          a2 -= b2;
         } else {
-          b -= a;
+          b2 -= a2;
         }
-      } return a;
+      } return a2;
     };
     const answer = gcd(num1, num2); // Initialize veriable for answer
     return cons(question, answer); // Return pair question-answer
